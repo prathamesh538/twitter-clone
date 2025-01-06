@@ -12,6 +12,7 @@ import Lists from "./Pages/Lists/Lists";
 import Profile from "./Pages/Profile/Profile";
 import More from "./Pages/more/More";
 import Bookmarks from "./Pages/Bookmark/Bookmark";
+import ProtectedRoute from "./login/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 
 function App() {
@@ -19,9 +20,26 @@ function App() {
     <div className="App">
       <UserAuthContextProvider>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route index element={Feed} />
-        <Route />
+      <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                {" "}
+                <Home />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Feed />} />
+          </Route>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                {" "}
+                <Home />
+              </ProtectedRoute>
+            }
+          />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />

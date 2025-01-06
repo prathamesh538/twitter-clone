@@ -17,14 +17,12 @@ async function run() {
     const postcollection = client.db("database").collection("posts");
     const usercollection = client.db("database").collection("users");
 
-    // Register a new user
     app.post("/register", async (req, res) => {
       const user = req.body;
       const result = await usercollection.insertOne(user);
       res.send(result);
     });
 
-    // Get logged-in user details by email
     app.get("/loggedinuser", async (req, res) => {
       const email = req.query.email;
       const user = await usercollection.find({ email: email }).toArray();

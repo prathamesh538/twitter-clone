@@ -3,7 +3,7 @@ import "./Feed.css";
 import Posts from "./Posts/Posts";
 import Tweetbox from "./Tweetbox/Tweetbox";
 
-const Feed = ({ isOpen }) => {
+const Feed = () => {
   const [post, setpost] = useState([]);
 
   useEffect(() => {
@@ -12,21 +12,19 @@ const Feed = ({ isOpen }) => {
       .then((data) => {
         setpost(data);
       })
-      .catch((error) => {
-        console.error("Error fetching posts:", error);
-      });
-  }, [post]);
+      
+  },[post]);
 
   const handleNewPost = (newPost) => {
     setpost((prevPosts) => [newPost, ...prevPosts]);
   };
 
   return (
-    <div className={`feed ${isOpen ? "open" : "closed"}`}>
-      <div className="feed_header">
+    <div className="feed">
+      <div className="feed__header">
         <h2>Home</h2>
       </div>
-      <Tweetbox onNewPost={handleNewPost} /> 
+      <Tweetbox />
       {post.map((p) => (
         <Posts key={p._id} p={p} />
       ))}

@@ -21,9 +21,9 @@ const Tweetbox = () => {
   const handleuploadimage = (e) => {
     setisloading(true);
     const image = e.target.files[0];
+    // console.log(image)
     const formData = new FormData();
     formData.set("image", image);
-
     axios
       .post(
         "https://api.imgbb.com/1/upload?key=93fd805b90df865efcd94d59cfea19e1",
@@ -31,22 +31,20 @@ const Tweetbox = () => {
       )
       .then((res) => {
         setimageurl(res.data.data.display_url);
-        console.log(res.data.data.display_url);
+        // console.log(res.data.data.display_url);
         setisloading(false);
       })
       .catch((e) => {
-        console.error("Image upload error:", e);
-        setisloading(false);
+        console.log(e);
       });
   };
-
   const handletweet = (e) => {
     e.preventDefault();
-
     if (user?.providerData[0]?.providerId === "password") {
       fetch(`http://localhost:5000/loggedinuser?email=${email}`)
         .then((res) => res.json())
         .then((data) => {
+          // console.log(data[0].name);
           setname(data[0]?.name);
           setusername(data[0]?.username);
         });
@@ -54,23 +52,23 @@ const Tweetbox = () => {
       setname(user?.displayName);
       setusername(email?.split("@")[0]);
     }
-
+    // console.log(name);
     if (name) {
       const userpost = {
         profilephoto: userprofilepic,
-        post: Posts,
+        post: post,
         photo: imageurl,
         username: username,
         name: name,
         email: email,
       };
-
+      // console.log(userpost);
       setpost("");
       setimageurl("");
       fetch("http://localhost:5000/post", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "content-type": "application/json",
         },
         body: JSON.stringify(userpost),
       })
@@ -80,7 +78,6 @@ const Tweetbox = () => {
         });
     }
   };
-
   return (
     <div className="tweetBox">
       <form onSubmit={handletweet}>
@@ -97,7 +94,7 @@ const Tweetbox = () => {
         <div className="imageIcon_tweetButton">
           <label htmlFor="image" className="imageIcon">
             {isloading ? (
-              <p>Uploading image...</p>
+              <p>Uploading Image</p>
             ) : (
               <p>
                 {imageurl ? (
@@ -115,7 +112,7 @@ const Tweetbox = () => {
             onChange={handleuploadimage}
           />
           <Button className="tweetBox__tweetButton" type="submit">
-            Tweet
+            Tweets
           </Button>
         </div>
       </form>
