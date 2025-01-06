@@ -1,0 +1,72 @@
+/* General Container */
+.widgets {
+    flex: 0.3; /* Ensures proper space allocation in a flex container */
+    border-left: 1px solid #e6ecf0; /* Visual separation from other sections */
+    padding: 20px;
+    height: 100vh; /* Full viewport height */
+    width: calc(100vw - 550px); /* Adjust width to fit alongside the sidebar */
+    margin-left: 650px; /* Matches the width of the sidebar */
+    overflow-y: auto;
+    background-color: #f5f8fa; /* Matches the design aesthetics */
+    position: fixed; /* Sticks to its position when scrolling */
+    top: 0; /* Aligns to the top of the viewport */
+  }
+  
+  
+  /* Search Input Section */
+  .widgets__input {
+    display: flex;
+    align-items: center;
+    background-color: #e6ecf0;
+    padding: 15px;
+    width: 500px;
+    margin-left: 100px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .widgets__input input {
+    border: none;
+    background: none;
+    outline: none;
+    margin-left: 10px;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .widgets__searchIcon {
+    color: #1da1f2;
+    font-size: 20px;
+    
+  }
+  
+  /* Widget Container */
+  .widgets__widgetContainer {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 500px;
+  }
+  
+  .widgets__widgetContainer h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Behavior */
+  @media screen and (max-width: 768px) {
+    .widgets {
+      flex: 1;
+      height: auto;
+    }
+  
+    .widgets__widgetContainer {
+      padding: 15px;
+    }
+  }
+  

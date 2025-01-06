@@ -1,0 +1,135 @@
+/* Feed */
+.feed {
+  flex: 0.3; /* Occupies 50% of the remaining space between sidebar and widgets */
+  min-width: 400px;/* Dynamic width between sidebar and widgets, making it flexible */
+  margin-left: 250px; /* Same as sidebar width to ensure it's aligned */
+  margin-right: 950px; /* Space from the widgets container */
+  border-left: 1px solid #e6ecf0; /* Visual separation from sidebar */
+  border-right: 1px solid #e6ecf0; /* Visual separation from widgets */
+  overflow-y:scroll; /* Allow scrolling */
+  background-color: #fff; /* White background */
+  height: 100vh; /* Full height */
+  box-sizing: border-box; /* Prevent overflow and ensure padding is included */
+  scrollbar-width:initial; /* Adjusts scrollbar width for Firefox */
+  scrollbar-color: #e6ecf0 transparent;
+}
+
+  /* Header */
+  .feed_header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 10;
+    border-bottom: 1px solid #e6ecf0;
+    padding: 15px 20px;
+    text-align: center;
+  }
+  
+  .feed_header h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #333;
+  }
+  
+  /* Post Styles */
+  .post {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e6ecf0;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .post_profilePhoto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .post_content {
+    flex: 1;
+  }
+  
+  .post_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .post_header h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .post_header span {
+    font-size: 14px;
+    color: #657786;
+    margin-left: 5px;
+  }
+  
+  .post_text {
+    margin: 5px 0 10px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .post_photo {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Tweetbox */
+  .tweetbox {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e6ecf0;
+  }
+  
+  .tweetbox textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    resize: none;
+    border-radius: 5px;
+    background-color: #f5f8fa;
+    margin-bottom: 10px;
+  }
+  
+  .tweetbox button {
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tweetbox button:hover {
+    background-color: #1a91da;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1400px) {
+    .feed {
+      flex: 1; /* Feed takes full width */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .feed {
+      flex: 1; /* Feed takes full width on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .feed {
+      flex: 1; /* Feed takes full width on very small screens */
+    }
+  }
+  

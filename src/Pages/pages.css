@@ -1,0 +1,63 @@
+/* General page styling */
+.page {
+  flex: 0.4;
+  border-right: 1px solid var(--twitter-background);
+  width: 100vw;
+  padding: 0 180px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  box-sizing: border-box; /* Include padding in element's size */
+  transition: padding 0.3s ease; /* Smooth padding transition for responsiveness */
+}
+
+.profilePage {
+  flex: 0.4;
+  border-right: 1px solid var(--twitter-background);
+  min-height: fit-content;
+  overflow-y: auto; /* Allow scrolling when content overflows */
+  padding: 20px; /* Add padding inside the profile page */
+  box-sizing: border-box;
+}
+
+.profilePage::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for a cleaner look */
+}
+
+.pageTittle {
+  color: var(--twitter-color);
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold; /* Add font-weight for emphasis */
+  margin-bottom: 20px; /* Add space below the title */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .page {
+    padding: 0 60px; /* Reduced padding for smaller screens */
+  }
+
+  .profilePage {
+    padding: 10px; /* Reduce padding inside the profile page */
+  }
+
+  .pageTittle {
+    font-size: 24px; /* Adjust title size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0 20px; /* Minimal padding on very small screens */
+  }
+
+  .profilePage {
+    padding: 5px; /* Further reduce padding */
+  }
+
+  .pageTittle {
+    font-size: 20px; /* Smaller title on very small screens */
+  }
+}

@@ -1,0 +1,46 @@
+/* Sidebar Option Container */
+.sidebaroptions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #14171a;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .sidebaroptions:hover {
+    background-color: rgba(29, 161, 242, 0.1);
+    transform: scale(1.02);
+  }
+  
+  /* Active State Styling */
+  .sidebarOptions--active {
+    background-color: rgba(29, 161, 242, 0.15);
+    color: #1da1f2;
+  }
+  
+  /* Icon Styling */
+  .sidebaroptions > svg {
+    font-size: 1.8rem;
+  }
+  
+  /* Text Styling */
+  .sidebaroptions h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .sidebaroptions h2 {
+      display: none;
+    }
+  
+    .sidebaroptions {
+      justify-content: center;
+      padding: 10px;
+    }
+  }
+  

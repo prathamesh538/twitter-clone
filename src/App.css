@@ -1,0 +1,148 @@
+/* General layout */
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents unnecessary scrollbars */
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed; /* Fixes the sidebar to the left side of the screen */
+  top: 0;
+  left: 0;
+  width: 250px; /* Fixed width for the sidebar */
+  height: 100vh; /* Sidebar takes up the full height */
+  background-color: #f5f8fa;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 2; /* Ensures the sidebar stays on top */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Scrollable sidebar for smaller screens */
+}
+
+/* Sidebar Links */
+.sidebar a {
+  text-decoration: none;
+  color: #14171a;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sidebar a:hover {
+  color: #1da1f2;
+}
+
+/* Main Content Styling */
+.main-feed {
+  flex: 0.6; /* 60% of the remaining space */
+  margin-left: 250px; /* Shift content to the right by 250px to account for the sidebar */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto; /* Scrollable content area */
+}
+
+/* Widget Container Styling */
+.widgets__widgetContainer {
+  flex: 0.3; /* Reduced size for the widget container */
+  margin-top: 15px;
+  margin-left: auto; /* Push widgets to the right */
+  width: 300px; /* Fixed width for consistency */
+  height: calc(100vh - 30px); /* Full height minus margins/padding */
+  padding: 20px;
+  background-color: #f5f8fa;
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Scrollable widgets */
+}
+
+/* Profile Sidebar Styling */
+.profile-sidebar {
+  width: 250px;
+  background-color: #f5f8fa;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.profile-sidebar h2 {
+  font-size: 24px;
+  color: #14171a;
+  margin-bottom: 20px;
+}
+
+.profile-sidebar a {
+  text-decoration: none;
+  color: #1da1f2;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column; /* Stack sidebar and main content vertically */
+  }
+
+  .sidebar {
+    width: 100%; /* Full width for sidebar */
+    height: auto;
+    padding: 15px;
+    overflow: auto; /* Allow scrolling */
+    margin-bottom: 20px;
+  }
+
+  .main-feed {
+    margin-left: 0;
+    padding: 15px;
+    height: auto; /* Adjust height for stacked layout */
+  }
+
+  .widgets__widgetContainer {
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%; /* Full width for widgets */
+    height: auto;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Slightly narrower sidebar */
+  }
+
+  .main-feed {
+    margin-left: 200px; /* Shift to the right accordingly */
+  }
+
+  .widgets__widgetContainer {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%; /* Full width for sidebar */
+    padding: 10px;
+    position: static; /* Make sidebar stack vertically */
+  }
+
+  .main-feed {
+    margin-left: 0;
+    width: 100%; /* Take up full width */
+  }
+
+  .widgets__widgetContainer {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+    height: auto;
+  }
+}

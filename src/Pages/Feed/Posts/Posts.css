@@ -1,0 +1,87 @@
+
+.post {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border-bottom: 1px solid #e6ecf0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .post:hover {
+    background-color: #f5f8fa;
+  }
+  
+  /* Avatar Styling */
+  .post__avatar {
+    margin-right: 15px;
+  }
+  
+  /* Post Body */
+  .post__body {
+    flex: 1;
+  }
+  
+  /* Post Header */
+  .post__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .post__headerText {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .post__headerText h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .post__headerSpecial {
+    font-size: 14px;
+    color: #657786;
+    margin-left: 5px;
+  }
+  
+  .post__badge {
+    font-size: 14px;
+    color: #1da1f2;
+    margin-right: 5px;
+  }
+  
+  /* Post Description */
+  .post__headerDescription {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Post Image */
+  .post__body img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    object-fit: cover;
+  }
+  
+  /* Post Footer Icons */
+  .post__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .post__fotter__icon {
+    color: #657786;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .post__fotter__icon:hover {
+    color: #1da1f2;
+  }
+  

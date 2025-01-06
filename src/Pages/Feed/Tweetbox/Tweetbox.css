@@ -1,0 +1,92 @@
+/* Tweetbox Container */
+.tweetBox {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e6ecf0;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Input Section */
+  .tweetBox__input {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .tweetBox__input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #f5f8fa;
+    margin-left: 10px;
+    border-radius: 5px;
+    resize: none;
+    min-height: 50px;
+  }
+  
+  /* Image and Tweet Button Section */
+  .imageIcon_tweetButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Image Icon Section */
+  .imageIcon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #1da1f2;
+    transition: color 0.3s ease;
+  }
+  
+  .imageIcon:hover {
+    color: #1a91da;
+  }
+  
+  /* Image Input (hidden but used for file upload) */
+  .imageInput {
+    display: none;
+  }
+  
+  /* Tweet Button */
+  .tweetBox__tweetButton {
+    background-color: #1da1f2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .tweetBox__tweetButton:hover {
+    background-color: #1a91da;
+  }
+  
+  .tweetBox__tweetButton:disabled {
+    background-color: #e6ecf0;
+    cursor: not-allowed;
+  }
+  
+  /* Message when image is uploading */
+  .imageIcon p {
+    margin: 0;
+    font-size: 14px;
+    color: #657786;
+  }
+  
+  /* Style for the Avatar */
+  .tweetBox__input .MuiAvatar-root {
+    margin-right: 10px;
+  }
+  
