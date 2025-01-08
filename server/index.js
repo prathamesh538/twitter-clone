@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 
 const uri =
-  "mongodb+srv://admin:<admin>@twitter.uqlc5.mongodb.net/?retryWrites=true&w=majority&appName=twitter";
+  "mongodb+srv://admin:admin@twitter.xs6mj.mongodb.net/?retryWrites=true&w=majority&appName=twitter";
 const port = 5000;
 const app = express();
 app.use(cors());
@@ -58,8 +58,10 @@ async function run() {
       const profile = req.body;
       const options = { upsert: true };
       const updateDoc = { $set: profile };
+      console.log(filter,options,updateDoc);
       const result = await usercollection.updateOne(filter, updateDoc, options);
       res.send(result);
+      
     });
   } catch (error) {
     console.log(error);

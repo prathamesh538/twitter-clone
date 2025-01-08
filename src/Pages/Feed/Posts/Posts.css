@@ -1,87 +1,124 @@
-
 .post {
-    display: flex;
-    align-items: flex-start;
-    padding: 15px;
-    border-bottom: 1px solid #e6ecf0;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  border-bottom: 1px solid #e6ecf0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.post:hover {
+  background-color: #f5f8fa;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Subtle elevation effect */
+}
+
+/* Avatar Styling */
+.post__avatar {
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Post Body */
+.post__body {
+  flex: 1;
+}
+
+/* Post Header */
+.post__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.post__headerText {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.post__headerText h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+}
+
+.post__headerSpecial {
+  font-size: 14px;
+  color: #657786;
+  margin-left: 5px;
+}
+
+.post__badge {
+  font-size: 14px;
+  color: #1da1f2;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+/* Post Description */
+.post__headerDescription {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6; /* Improves readability */
+  margin-bottom: 10px;
+}
+
+/* Post Image */
+.post__body img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.post__body img:hover {
+  transform: scale(1.02); /* Adds slight zoom effect on hover */
+}
+
+/* Post Footer Icons */
+.post__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post__footer__icon {
+  color: #657786;
+  font-size: 18px; /* Slightly larger for emphasis */
+  cursor: pointer;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.post__footer__icon:hover {
+  color: #1da1f2;
+  transform: scale(1.1); /* Adds interactivity */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .post {
+    padding: 10px;
   }
-  
-  .post:hover {
-    background-color: #f5f8fa;
-  }
-  
-  /* Avatar Styling */
+
   .post__avatar {
-    margin-right: 15px;
+    width: 40px;
+    height: 40px;
   }
-  
-  /* Post Body */
-  .post__body {
-    flex: 1;
-  }
-  
-  /* Post Header */
-  .post__header {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  .post__headerText {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
+
   .post__headerText h3 {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 0;
-  }
-  
-  .post__headerSpecial {
     font-size: 14px;
-    color: #657786;
-    margin-left: 5px;
   }
-  
-  .post__badge {
-    font-size: 14px;
-    color: #1da1f2;
-    margin-right: 5px;
-  }
-  
-  /* Post Description */
+
   .post__headerDescription {
-    font-size: 15px;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 14px;
   }
-  
-  /* Post Image */
-  .post__body img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-    object-fit: cover;
+
+  .post__footer__icon {
+    font-size: 16px;
   }
-  
-  /* Post Footer Icons */
-  .post__footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .post__fotter__icon {
-    color: #657786;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  .post__fotter__icon:hover {
-    color: #1da1f2;
-  }
-  
+}

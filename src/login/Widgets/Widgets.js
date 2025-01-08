@@ -6,7 +6,7 @@ const Widgets = () => {
   return (
     <div className="widgets">
       <div className="widgets__input">
-        <SearchIcon className="widgets__searchIcon"  />
+        <SearchIcon className="widgets__searchIcon" />
         <input placeholder="Search Twitter" type="text" />
       </div>
       <div className="widgets__widgetContainer">
@@ -15,6 +15,19 @@ const Widgets = () => {
         <TwitterTimelineEmbed
           sourceType="profile"
           screenName="Valorent"
+          options={{ height: 400 }}
+        />
+        <TwitterTweetEmbed tweetId={"1234567890123456789"} />
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="RiotGames"
+          options={{ height: 400 }}
+        />
+
+        <TwitterTweetEmbed tweetId={"9876543210987654321"} />
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="PlayVALORANT"
           options={{ height: 400 }}
         />
       </div>

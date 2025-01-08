@@ -1,92 +1,121 @@
 /* Tweetbox Container */
 .tweetBox {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #e6ecf0;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #e6ecf0;
+  border-radius: 15px; /* Slightly increased for modern look */
+  max-width: 600px;
+  margin: 20px auto; /* Added top margin for spacing */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  transition: box-shadow 0.3s ease;
+}
+
+.tweetBox:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
+
+/* Input Section */
+.tweetBox__input {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.tweetBox__input input {
+  width: 100%;
+  border: 1px solid #e6ecf0; /* Added subtle border for visibility */
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  background-color: #f5f8fa;
+  margin-left: 10px;
+  border-radius: 10px;
+  resize: none;
+  min-height: 50px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tweetBox__input input:focus {
+  box-shadow: 0px 0px 8px rgba(29, 161, 242, 0.4);
+  border-color: #1da1f2;
+}
+
+/* Image and Tweet Button Section */
+.imageIcon_tweetButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Image Icon Section */
+.imageIcon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #1da1f2;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.imageIcon:hover {
+  color: #1a91da;
+  transform: scale(1.1); /* Subtle scaling for feedback */
+}
+
+/* Image Input (hidden but used for file upload) */
+.imageInput {
+  display: none;
+}
+
+/* Tweet Button */
+.tweetBox__tweetButton {
+  background-color: #1da1f2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+}
+
+.tweetBox__tweetButton:hover {
+  background-color: #1991d0;
+  transform: scale(1.05); /* Slight scaling on hover for better feedback */
+}
+
+.tweetBox__tweetButton:disabled {
+  background-color: #e6ecf0;
+  cursor: not-allowed;
+}
+
+/* Message when image is uploading */
+.imageIcon p {
+  margin: 0;
+  font-size: 14px;
+  color: #657786;
+}
+
+/* Style for the Avatar */
+.tweetBox__input .MuiAvatar-root {
+  margin-right: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .tweetBox {
+    padding: 15px;
   }
-  
-  /* Input Section */
-  .tweetBox__input {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-  }
-  
+
   .tweetBox__input input {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    padding: 10px;
-    background-color: #f5f8fa;
-    margin-left: 10px;
-    border-radius: 5px;
-    resize: none;
-    min-height: 50px;
-  }
-  
-  /* Image and Tweet Button Section */
-  .imageIcon_tweetButton {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* Image Icon Section */
-  .imageIcon {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    color: #1da1f2;
-    transition: color 0.3s ease;
-  }
-  
-  .imageIcon:hover {
-    color: #1a91da;
-  }
-  
-  /* Image Input (hidden but used for file upload) */
-  .imageInput {
-    display: none;
-  }
-  
-  /* Tweet Button */
-  .tweetBox__tweetButton {
-    background-color: #1da1f2;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-  }
-  
-  .tweetBox__tweetButton:hover {
-    background-color: #1a91da;
-  }
-  
-  .tweetBox__tweetButton:disabled {
-    background-color: #e6ecf0;
-    cursor: not-allowed;
-  }
-  
-  /* Message when image is uploading */
-  .imageIcon p {
-    margin: 0;
     font-size: 14px;
-    color: #657786;
   }
-  
-  /* Style for the Avatar */
-  .tweetBox__input .MuiAvatar-root {
-    margin-right: 10px;
+
+  .tweetBox__tweetButton {
+    padding: 8px 16px;
+    font-size: 14px;
   }
-  
+}

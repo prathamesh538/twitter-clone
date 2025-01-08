@@ -1,166 +1,229 @@
-/* General styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Modal Styles */
-  .modal {
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    
-  }
-  
-  /* Header */
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 10px;
-  }
-  
-  .header-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .save-btn {
-    background-color: #1d9bf0;
-    color: #ffffff;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 16px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .save-btn:hover {
-    background-color: #1a8cd8;
-  }
-  
-  /* Form Fields */
-  .fill-content {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .text-field input {
-    border-radius: 4px;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #e0e0e0;
-    outline: none;
-  }
-  
-  .text-field input:focus {
-    border-color: #1d9bf0;
-  }
-  
-  /* Birthdate Section */
-  .birthdate-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 10px 0;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .birthdate-section p {
-    margin: 0;
-    font-size: 16px;
-    color: #555555;
-  }
-  
-  .birthdate-section text {
-    font-size: 14px;
-    color: #1d9bf0;
-    cursor: pointer;
-  }
-  
-  /* Last Section */
-  .last-section {
-    margin-top: 20px;
-  }
-  
-  .last-section h2 {
-    font-size: 16px;
-    color: #555555;
-    margin: 0;
-  }
-  
-  .last-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 10px 0;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .last-btn h2 {
-    font-size: 16px;
-    margin: 0;
-    color: #1d9bf0;
-  }
-  
-  .last-btn:hover {
-    background-color: #f5f5f5;
-  }
-  
-  /* Buttons */
-  .Edit-profile-btn {
-    background-color: #1d9bf0;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 20px 0;
-  }
-  
-  .Edit-profile-btn:hover {
-    background-color: #1a8cd8;
-  }
-  
-  .e-button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .e-button:hover {
-    background-color: #e53935;
-  }
-  /* Modal Wrapper */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+/* Modal Wrapper */
 .modal {
-    position: relative;
-    z-index: 1300;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    outline: none;
-    padding: 20px;
-    margin: auto;
+  position: relative;
+  z-index: 1300;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  outline: none;
+  padding: 20px;
+  margin: auto;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Backdrop (for full-screen overlay) */
+.MuiBackdrop-root {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1200;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.save-btn {
+  background-color: #1d9bf0;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #1a8cd8;
+}
+
+/* Form Fields */
+.fill-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text-field input {
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+}
+
+.text-field input:focus {
+  border-color: #1d9bf0;
+  box-shadow: 0px 0px 4px rgba(29, 155, 240, 0.3);
+}
+
+/* Birthdate Section */
+.birthdate-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.birthdate-section label {
+  font-size: 16px;
+  color: #555555;
+}
+
+.birthdate-container {
+  position: relative;
+}
+
+.birthdate-picker {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  background-color: #fff;
+}
+
+.birthdate-picker:focus {
+  border-color: #1d9bf0;
+  box-shadow: 0px 0px 4px rgba(29, 155, 240, 0.3);
+}
+
+/* Last Section */
+.last-section {
+  margin-top: 20px;
+}
+
+.last-section h2 {
+  font-size: 16px;
+  color: #555555;
+  margin: 0;
+}
+
+.last-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.last-btn h2 {
+  font-size: 16px;
+  margin: 0;
+  color: #1d9bf0;
+}
+
+.last-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Edit Profile Button */
+.Edit-profile-btn {
+  background-color: #1d9bf0;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.Edit-profile-btn:hover {
+  background-color: #1a8cd8;
+}
+
+/* Cancel Button */
+.e-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.e-button:hover {
+  background-color: #e53935;
+}
+
+/* Calendar Styling */
+.calendar-container {
+  position: relative;
+  margin-top: 10px;
+}
+
+.calendar {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #ffffff;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.calendar .selected-date {
+  background-color: #1d9bf0;
+  color: white;
+  border-radius: 4px;
+}
+
+.calendar button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 8px;
+  transition: background-color 0.2s;
+}
+
+.calendar button:hover {
+  background-color: #f0f8ff;
+  border-radius: 4px;
+}
+
+.calendar button:focus {
+  background-color: #1d9bf0;
+  color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 95%;
+    padding: 15px;
   }
-  
-  /* Backdrop (optional for full-screen overlay) */
-  .MuiBackdrop-root {
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1200; /* Ensure it's behind the modal */
+
+  .header-title {
+    font-size: 18px;
   }
-  
+
+  .save-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}

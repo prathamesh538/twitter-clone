@@ -1,25 +1,22 @@
-import React, { use, useState } from "react";
-import { Box } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Modal } from "@mui/material";
 import Button from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { IconButton } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import Modal from "@mui/material/Modal";
 import "./Editprofile.css";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
-  transform: "translate(-50%, -50%)", // Corrected from 'ttransform'
+  transform: "translate(-50%, -50%)",
   width: 600,
   height: 600,
   bgcolor: "background.paper",
   boxShadow: 24,
   borderRadius: 8,
-  zIndex: 1300, // Ensure it appears above other elements
-  outline: "none", // Remove the focus outline
 };
 
 function Editchild({ dob, setdob }) {
@@ -40,16 +37,16 @@ function Editchild({ dob, setdob }) {
         open={open}
         onClose={handleclose}
         aria-labelledby="child-modal-title"
-        aria-describedby="child-modal-description"
+        aria-describedby="child-modal-descriptiom"
       >
         <Box sx={{ ...style, width: 300, height: 300 }}>
           <div className="text">
-            <h2>Edit date of birth</h2>
+            <h2> Edit date of birth</h2>
             <p>
-              this can only change a few times
+                This can only be changed a few times
               <br />
-              Make sure you enter the age of the <br />
-              person using the account.
+                Make sure you enter the age of the <br />
+                person using the account.{" "}
             </p>
             <input type="date" onChange={(e) => setdob(e.target.value)} />
             <button
@@ -93,10 +90,15 @@ const Editprofile = ({ user, loggedinuser }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log("done", data);
-        setopen(false); // Close modal after saving
-      })
-      .catch((err) => console.error("Error updating profile:", err)); // Error handling added
+      });
   };
+
+  // Safely access properties with optional chaining
+  const userName = loggedinuser?.[0]?.name || "";
+  const userBio = loggedinuser?.[0]?.bio || "";
+  const userLocation = loggedinuser?.[0]?.location || "";
+  const userWebsite = loggedinuser?.[0]?.website || "";
+  const userDob = loggedinuser?.[0]?.dob || "";
 
   return (
     <div>
@@ -111,7 +113,7 @@ const Editprofile = ({ user, loggedinuser }) => {
       <Modal
         open={open}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        aria-describedby="modal-modal-descriptiom"
       >
         <Box style={style} className="modal">
           <div className="header">
@@ -128,47 +130,47 @@ const Editprofile = ({ user, loggedinuser }) => {
               className="text-field"
               fullWidth
               label="Name"
-              variant="filled" // Corrected 'varient' to 'variant'
+              id="fullWidth"
+              variant="filled"
               onChange={(e) => setname(e.target.value)}
-              defaultValue={loggedinuser[0]?.name ? loggedinuser[0].name : ""}
+              defaultValue={userName}
             />
             <TextField
               className="text-field"
               fullWidth
               label="Bio"
+              id="fullWidth"
               variant="filled"
               onChange={(e) => setbio(e.target.value)}
-              defaultValue={loggedinuser[0]?.bio ? loggedinuser[0].bio : ""}
+              defaultValue={userBio}
             />
             <TextField
               className="text-field"
               fullWidth
               label="Location"
+              id="fullWidth"
               variant="filled"
               onChange={(e) => setlocation(e.target.value)}
-              defaultValue={
-                loggedinuser[0]?.location ? loggedinuser[0].location : ""
-              }
+              defaultValue={userLocation}
             />
             <TextField
               className="text-field"
               fullWidth
               label="Website"
+              id="fullWidth"
               variant="filled"
               onChange={(e) => setwebsite(e.target.value)}
-              defaultValue={
-                loggedinuser[0]?.website ? loggedinuser[0].website : ""
-              }
+              defaultValue={userWebsite}
             />
           </form>
           <div className="birthdate-section">
-            <p>Birthdate</p>
+            <p>Birth Date</p>
             <p>.</p>
             <Editchild dob={dob} setdob={setdob} />
           </div>
           <div className="last-section">
-            {loggedinuser[0]?.dob ? (
-              <h2>{loggedinuser[0]?.dob}</h2>
+            {userDob ? (
+              <h2>{userDob}</h2>
             ) : (
               <h2>{dob ? dob : "Add your date of birth"}</h2>
             )}

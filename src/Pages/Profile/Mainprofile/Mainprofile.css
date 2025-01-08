@@ -1,152 +1,213 @@
 /* General Layout */
 .mainprofile {
-    flex: 0.3; /* Occupies 50% of the remaining space between sidebar and widgets */
-    min-width: 400px;/* Dynamic width between sidebar and widgets, making it flexible */
-    margin-left: 250px; /* Same as sidebar width to ensure it's aligned */
-    margin-right: 950px; /* Space from the widgets container */
-    border-left: 1px solid #e6ecf0; /* Visual separation from sidebar */
-    border-right: 1px solid #e6ecf0; /* Visual separation from widgets */
-    overflow-y: auto; /* Allow scrolling */
-    background-color: #fff; /* White background */
-    height: 100vh; /* Full height */
-    box-sizing: border-box; /* Prevent overflow and ensure padding is included */
+  flex: 0.3;
+  min-width: 400px;
+  margin-left: 250px;
+  margin-right: 950px;
+  border-left: 1px solid #e6ecf0;
+  border-right: 1px solid #e6ecf0;
+  overflow-y: auto;
+  background-color: #fff;
+  height: 100vh;
+  box-sizing: border-box;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #ccc #f4f4f4;
+}
+
+.mainprofile::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mainprofile::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.mainprofile::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+
+/* Back Arrow Icon */
+.arrow-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.arrow-icon:hover {
+  color: #1da1f2;
+}
+
+/* Profile Header */
+.heading-4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Cover Image */
+.coverImageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #f4f4f4;
+  overflow: hidden;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hoverCoverImage {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hoverCoverImage:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.photoIcon {
+  color: #fff;
+  font-size: 20px;
+}
+
+.photoIconDisabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Avatar */
+.avatar-img {
+  position: relative;
+  margin-top: -60px;
+  text-align: center;
+}
+
+.avatarContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.hoverAvatarImage {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hoverAvatarImage:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* User Info */
+.userInfo {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.heading-3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.usernameSection {
+  font-size: 1rem;
+  color: #888;
+  margin-top: 5px;
+}
+
+/* Location and Website */
+.infoContainer {
+  margin-top: 20px;
+}
+
+.suvInfo {
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.suvInfo svg {
+  margin-right: 5px;
+}
+
+/* Tweets Section */
+.tweetsText {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #444;
+}
+
+hr {
+  width: 100%;
+  border: 0.5px solid #ddd;
+  margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .mainprofile {
+    margin-left: 20px;
+    margin-right: 20px;
   }
-  
-  /* Back Arrow Icon */
-  .arrow-icon {
-    cursor: pointer;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Profile Header */
-  .heading-4 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #444;
-    margin-bottom: 10px;
-  }
-  
-  /* Cover Image */
-  .coverImageContainer {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    background-color: #f4f4f4;
-  }
-  
-  .coverImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  .hoverCoverImage {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-  }
-  
-  .photoIcon {
-    color: #fff;
-    font-size: 20px;
-  }
-  
-  .photoIconDisabled {
-    color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  /* Avatar */
-  .avatar-img {
-    position: relative;
-    margin-top: -60px;
-    text-align: center;
-  }
-  
-  .avatarContainer {
-    position: relative;
-    display: inline-block;
-  }
-  
+
   .avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    object-fit: cover;
+    width: 100px;
+    height: 100px;
   }
-  
-  .hoverAvatarImage {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+
+  .coverImageContainer {
+    height: 150px;
   }
-  
-  /* User Info */
-  .userInfo {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
+
   .heading-3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 1.5rem;
   }
-  
-  .usernameSection {
-    font-size: 1rem;
-    color: #888;
-    margin-top: 5px;
-  }
-  
-  /* Location and Website */
-  .infoContainer {
-    margin-top: 20px;
-  }
-  
-  .suvInfo {
-    display: flex;
-    align-items: center;
-    color: #555;
-    font-size: 1rem;
-    margin-top: 5px;
-  }
-  
-  .suvInfo svg {
-    margin-right: 5px;
-  }
-  
-  /* Tweets Section */
+
   .tweetsText {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 30px;
-    color: #444;
+    font-size: 1rem;
   }
-  
-  hr {
-    width: 100%;
-    border: 0.5px solid #ddd;
-    margin-top: 10px;
-  }
-  
+}

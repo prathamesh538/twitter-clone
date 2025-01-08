@@ -1,130 +1,150 @@
 /* General Layout */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f8fa;
-    font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #1da1f2, #a6cee3);
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image {
+  max-width: 80%;
+  border-radius: 12px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-container {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Twitter Icon */
+.TwitterIcon {
+  font-size: 60px;
+  color: #1da1f2;
+  margin-bottom: 20px;
+}
+
+/* Headings */
+.heading {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.heading1 {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-name,
+.email,
+.password {
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.display-name:focus,
+.email:focus,
+.password:focus {
+  border-color: #1da1f2;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(29, 161, 242, 0.5);
+}
+
+/* Buttons */
+.btn-login {
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #1da1f2;
+  color: #fff;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1a8cd8;
+  transform: scale(1.05);
+}
+
+/* Error Message */
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* Google Button */
+.google-button {
+  margin-top: 20px;
+}
+
+.g-btn {
+  width: 100%;
+}
+
+/* Link to Login */
+a {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1da1f2;
+  margin-top: 15px;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0c85d0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
   }
-  
-  .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .image {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .form-container {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  /* Twitter Icon */
-  .TwitterIcon {
-    font-size: 50px;
-    margin-bottom: 10px;
-  }
-  
-  /* Headings */
-  .heading {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .heading1 {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  /* Form Styles */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .display-name,
-  .email,
-  .password {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    width: 100%;
-  }
-  
-  .display-name:focus,
-  .email:focus,
-  .password:focus {
-    border-color: #1da1f2;
-    outline: none;
-    box-shadow: 0px 0px 4px rgba(29, 161, 242, 0.5);
-  }
-  
-  /* Buttons */
-  .btn-login {
-    margin-top: 20px;
-  }
-  
-  .btn {
-    background-color: #1da1f2;
-    color: #fff;
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #1a8cd8;
-  }
-  
-  /* Error Message */
-  .errorMessage {
-    color: red;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-  }
-  
-  /* Google Button */
-  .google-button {
-    margin-top: 20px;
-  }
-  
-  .g-btn {
-    width: 100%;
-  }
-  
-  /* Link to Login */
-  a {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #1da1f2;
-    margin-top: 10px;
-    display: inline-block;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+}
