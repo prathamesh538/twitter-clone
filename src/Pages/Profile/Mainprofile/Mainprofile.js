@@ -14,7 +14,7 @@ import useLoggedinuser from "../../../hooks/useLoggedinuser";
 const Mainprofile = ({ user }) => {
   const navigate = useNavigate();
   const [isloading, setisloading] = useState(false);
-  const [loggedinuser] = useLoggedinuser();
+  const [loggedinuser,setloggedinuser] = useLoggedinuser();
   const username = user?.email?.split("@")[0] || "Anonymous"; // Fallback if user is null
   const [post, setpost] = useState([]);
 
@@ -103,6 +103,32 @@ const Mainprofile = ({ user }) => {
         setisloading(false);
       });
   };
+  const fetchLoggedInUser = async () => {
+    try {
+      const res = await fetch(`http://localhost:5000/loggedinuser?email=${user?.email}`);
+      const data = await res.json();
+      setloggedinuser(data[0]);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
+
+  const fetchUserPosts = async () => {
+    try {
+      const res = await fetch(`http://localhost:5000/userpost?email=${user?.email}`);
+      const data = await res.json();
+      setpost(data);
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (user?.email) {
+      fetchLoggedInUser();
+      fetchUserPosts();
+    }
+  }, [user?.email]);
 
   return (
     <div>
@@ -178,23 +204,27 @@ const Mainprofile = ({ user }) => {
                 <Editprofile user={user} loggedinuser={loggedinuser} />
               </div>
               <div className="infoContainer">
-                {loggedinuser?.bio && <p>{loggedinuser.bio}</p>}
-                <div className="locationAndLink">
-                  {loggedinuser?.location && (
-                    <p className="suvInfo">
-                      <MyLocationIcon /> {loggedinuser.location}
-                    </p>
-                  )}
-                  {loggedinuser?.website && (
-                    <p className="subInfo link">
-                      <AddLinkIcon /> {loggedinuser.website}
-                    </p>
-                  )}
+                  {loggedinuser?.bio ? <p>{loggedinuser.bio}</p> : ""}
+                  <div className="locationAndLink">
+                    {loggedinuser?.location ? (
+                      <p className="suvInfo">
+                        <MyLocationIcon /> {loggedinuser.location}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                    {loggedinuser?.website ? (
+                      <p className="subInfo link">
+                        <AddLinkIcon /> {loggedinuser.website}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                 </div>
+                <h4 className="tweetsText">Tweets</h4>
+                <hr />
               </div>
-              <h4 className="tweetsText">Tweets</h4>
-              <hr />
-            </div>
             {post.map((p) => (
               <Posts key={p._id} p={p} />
             ))}
@@ -202,7 +232,7 @@ const Mainprofile = ({ user }) => {
         </div>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default Mainprofile;

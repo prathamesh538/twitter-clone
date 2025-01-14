@@ -39,7 +39,7 @@ function Editchild({ dob, setdob }) {
         aria-labelledby="child-modal-title"
         aria-describedby="child-modal-descriptiom"
       >
-        <Box sx={{ ...style, width: 300, height: 300 }}>
+        <Box sx={{ ...style, width: 400, height: 400 }}>
           <div className="text">
             <h2> Edit date of birth</h2>
             <p>
@@ -57,6 +57,7 @@ function Editchild({ dob, setdob }) {
             >
               Cancel
             </button>
+            
           </div>
         </Box>
       </Modal>

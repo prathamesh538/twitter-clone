@@ -11,9 +11,8 @@ const Feed = () => {
       .then((res) => res.json())
       .then((data) => {
         setpost(data);
-      })
-      
-  },[post]);
+      });
+  }, [post]);
 
   const handleNewPost = (newPost) => {
     setpost((prevPosts) => [newPost, ...prevPosts]);
@@ -26,7 +25,17 @@ const Feed = () => {
       </div>
       <Tweetbox />
       {post.map((p) => (
-        <Posts key={p._id} p={p} />
+        <div key={p._id}>
+          <Posts p={p} />
+          {p.audio && (
+            <div className="audioPost">
+              <audio controls>
+                <source src={p.audio} type="audio/mp3" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          )}
+        </div>
       ))}
     </div>
   );

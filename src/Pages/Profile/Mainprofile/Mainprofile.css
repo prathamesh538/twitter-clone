@@ -211,3 +211,11 @@ hr {
     font-size: 1rem;
   }
 }
+
+/* Accessibility Enhancements */
+.arrow-icon:focus,
+.photoIcon:focus,
+.photoIconDisabled:focus {
+  outline: 2px solid #1da1f2;
+  outline-offset: 4px;
+}

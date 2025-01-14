@@ -42,15 +42,17 @@
   border-color: #1da1f2;
 }
 
-/* Image and Tweet Button Section */
+/* Image and Audio Section */
 .imageIcon_tweetButton {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 /* Image Icon Section */
-.imageIcon {
+.imageIcon,
+.audioIcon {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -59,13 +61,20 @@
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.imageIcon:hover {
+.imageIcon:hover,
+.audioIcon:hover {
   color: #1a91da;
   transform: scale(1.1); /* Subtle scaling for feedback */
 }
 
-/* Image Input (hidden but used for file upload) */
-.imageInput {
+/* Audio Recording Icon */
+.audioIcon {
+  margin-left: 15px;
+}
+
+/* File Input Sections (hidden but used for file upload) */
+.imageInput,
+.audioInput {
   display: none;
 }
 
@@ -75,11 +84,12 @@
   color: white;
   font-weight: bold;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px; /* Increased padding for better visibility */
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-size: 16px;
+  margin-top: 10px; /* Added margin to separate from icons */
 }
 
 .tweetBox__tweetButton:hover {
@@ -92,8 +102,9 @@
   cursor: not-allowed;
 }
 
-/* Message when image is uploading */
-.imageIcon p {
+/* Message when image or audio is uploading */
+.imageIcon p,
+.audioIcon p {
   margin: 0;
   font-size: 14px;
   color: #657786;
@@ -116,6 +127,11 @@
 
   .tweetBox__tweetButton {
     padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .imageIcon,
+  .audioIcon {
     font-size: 14px;
   }
 }
